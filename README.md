@@ -2,6 +2,8 @@
 
 Org chart for the Giga Corp people data (40k employees), built with Vue 3 and Tailwind.
 
+Live demo: https://manit124.github.io/giga-corp-org-chart/
+
 - Expand and collapse anyone's reports
 - Each manager shows descendants, managers below, management cost, IC cost, total cost and the IC to manager ratio
 - Search by name, zoom in/out or fit the chart to the screen
