@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  --mgmt: #2a78d6;
+  --ic: #eb6834;
+  --line: #cbd5e1;
+}
+
+.btn {
+  @apply rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-700 hover:bg-slate-50;
+}
+
+.bar {
+  @apply flex h-3 gap-[2px] overflow-hidden rounded-r;
+}
+
+.org-tree ul,
+.org-tree li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.org-tree ul ul {
+  margin-left: 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--line);
+}
+.org-tree ul ul > li {
+  padding-top: 0.75rem;
+}
+.org-tree ul ul > li::before {
+  content: "";
+  position: absolute;
+  left: -0.75rem;
+  top: 2rem;
+  width: 0.75rem;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 640px) {
+  .org-tree ul {
+    display: flex;
+    justify-content: center;
+  }
+  .org-tree ul ul {
+    margin-left: 0;
+    padding: 1.5rem 0 0;
+    border-left: 0;
+  }
+  .org-tree li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0.5rem 0;
+  }
+  .org-tree > ul > li {
+    padding-top: 0;
+  }
+
+  .org-tree ul ul::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 1.5rem;
+    border-left: 1px solid var(--line);
+  }
+
+  .org-tree ul ul > li::before,
+  .org-tree ul ul > li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 50%;
+    width: 50%;
+    height: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+  .org-tree ul ul > li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid var(--line);
+  }
+  .org-tree ul ul > li:first-child::before,
+  .org-tree ul ul > li:last-child::after {
+    border: 0;
+  }
+  .org-tree ul ul > li:last-child::before {
+    border-right: 1px solid var(--line);
+  }
+  .org-tree ul ul > li:only-child::before {
+    display: none;
+  }
+  .org-tree ul ul > li:only-child::after {
+    border-top: 0;
+  }
+}
